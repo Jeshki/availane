@@ -1,0 +1,106 @@
+* {
+    font-family: "Tektur", sans-serif;
+    margin: 0;
+}
+
+.header {
+    display: flex; /* Įsitikinkite, kad yra */
+    align-items: center; /* PRIDĖKITE arba PAKEISKITE į center */
+    justify-content: space-between; /* Dažnai naudojama, kad logotipas būtų viename krašte, o navigacija kitame */
+    padding: 2rem 2; /* Pavyzdys: pridėkite šiek tiek atstumo nuo kraštų */
+    height: 80px; /* Pavyzdys: nustatykite konkretų aukštį */
+    z-index: 10; /* Pavyzdys: užtikrina, kad Nav baras būtų virš kitų elementų */
+}
+
+/* ... kitos Jūsų Navbar.css taisyklės ... */
+
+#video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* object-fit: contain;  -- Pašalinta: neturi efekto ant div */
+    position: relative; /* Pridėta: kad .content pozicionuotųsi jo atžvilgiu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-content: center;
+    place-items: center;
+    gap: 25px;
+}
+
+
+.hero .content {
+    text-align: center;
+    /* margin: auto; -- Pašalinta: nereikalinga su width: 100% */
+    width: 1200px;
+    /* height: 100%; -- Pašalinta: aukštis prisitaikys pagal turinį */
+    top: 40vh;
+
+
+}
+
+.hero .content h1 {
+    font-size: 4rem;
+    color: #fff;
+    font-family: "Tektur", bold;
+  font-optical-sizing: auto;
+  font-weight: 16px;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.logo {
+    display: block; /* Padaro elementą blokinio lygio */
+    width: 450px; /* Nustato plotį (arba naudokite max-width) */
+    margin-left: auto; /* Automatinė kairė paraštė */
+    margin-right: auto; /* Automatinė dešinė paraštė */
+  
+}
+
+.btn {
+    background-color: white;
+    color: #3F1E55;
+    margin: 2rem .2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease; /* PRIDĖTA: Sklandus perėjimas keičiant spalvas */
+    margin-top: 15px;
+}
+
+.hero .btn:hover { /* PRIDĖTA: Taisyklė, taikoma, kai ant mygtuko užvedama pele */
+    background-color: #3F1E55; /* Keičia fono spalvą hover metu */
+    color: white;         /* Keičia teksto spalvą hover metu */
+    cursor: pointer;      /* PRIDĖTA: Parodo rankos žymeklį, kai užvedama (jei tai nebuvo Link komponentas) */
+    /* Galite pridėti ir kitus hover efektus, pvz.: */
+    /* transform: scale(1.05);  - Truputį padidina mygtuką */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); - Prideda šešėlį */
+}
+
+
+@media screen and (max-width:640px) {
+    .hero .content h1 { /* Pridėtas .hero, kad būtų specifiškesnis */
+        font-size: 3rem;
+    }
+
+    .hero .content p { /* Pridėtas .hero, kad būtų specifiškesnis */
+        font-size: 1.4rem;
+        margin-bottom: 1.6rem;
+    }
+}
